@@ -1,0 +1,238 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  
+    <title>Document</title>
+</head>
+<body>
+    <div class="container jumbotron">
+        <div class="text-center mb-4">
+            <h3>Chi tiết user</h3>
+        </div>
+        
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Name</label>
+            </div>
+            <div class="col-sm-8">
+                <input class="form-control" placeholder="Nhập Firstname" id="input-firstname" type="text"/>
+                
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Username</label>
+            </div>
+            <div class="col-sm-8">
+                <input class="form-control" placeholder="Nhập Lastname" id="input-lastname" type="text"/>
+                
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Subject</label>
+            </div>
+            <div class="col-sm-8">
+                <input class="form-control" placeholder="Nhập Subject" id="input-subject" type="text"/>
+                
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Country</label>
+            </div>
+            <div class="col-sm-8">
+               <select class="form-control" id="select-country" name="Country">
+                  <option value="VN">Việt Nam</option>
+                  <option value="USA">USA</option>
+                  <option value="AUS">Australia</option>
+                  <option value="CANA">Canada</option>
+
+               </select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Customer Type</label>
+            </div>
+            <div class="col-sm-8">
+               <select class="form-control" id="select-customertype" name="Customertype">
+                  <option value="Standard">Standard</option>
+                  <option value="Gold">Gold</option>
+                  <option value="Premium">Premium</option>
+                  
+               </select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                <label>Register Status</label>
+            </div>
+            <div class="col-sm-8">
+               <select class="form-control" id="select-registerstatus" name="Registerstatus">
+                  <option value="Accepted">Accepted</option>
+                  <option value="Denied">Denied</option>
+                  <option value="Standard">Standard</option>
+                  
+               </select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-8">
+               <button type="button" class="btn btn-success w-25" id="btn-update-user">
+                Update user
+               </button>
+               <button type="button" class="btn btn-success w-25" id="btn-delete-user">
+                Hủy bỏ
+               </button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    "use strict";
+    /*** REGION 1 - Global variables - Vùng khai báo biến, hằng số, tham số TOÀN CỤC */
+     /*** REGION 2 - Vùng gán / thực thi sự kiện cho các elements */
+     $(document).ready(function(){
+        onLoadPaging();
+     })
+     /*** REGION 3 - Event handlers - Vùng khai báo các hàm xử lý sự kiện */
+     //hàm được gọi khi load trang
+     function onLoadPaging(){
+        "use trict";
+        var vUserId = getCurrentUserId();
+        callApiGetDataUserById(vUserId);
+     }
+     //hàm xử lí click nút update
+     
+     $("#btn-update-user").on("click", function(){
+        console.log("Nút update được ấn");
+        //B1 Get form data
+        var vDataObj = getFormData();
+        console.log(vDataObj);
+        //B2 validate dữ liệu
+        var vIsDataValid = validateFormData(vDataObj);
+        if(vIsDataValid){
+            //B3 process update user info
+            callAjaxAPIUpdateUser(vDataObj);
+        }
+     })
+     //hàm xử lí click nút hủy bỏ
+     $("#btn-delete-user").on("click", function(){
+        console.log("Nút HỦy được ấn");
+        
+     })
+     /*** REGION 4 - Common funtions - Vùng khai báo hàm dùng chung trong toàn bộ chương trình*/
+     //hàm truy xuất user id
+     function getCurrentUserId(){
+        "use strict";
+        var vUrlString = window.location.href;
+        var vUrl = new URL(vUrlString);
+        var vId = vUrl.searchParams.get("id");
+        return vId
+
+     }
+     //hàm lấy thông tin user theo id
+     function callApiGetDataUserById(paramUserId){
+        $.ajax({
+            url:  "https://jsonplaceholder.typicode.com/users/" + paramUserId,
+            type:"GET",
+            dataType:"json",
+            success: function(DataUserObj){
+                console.log(DataUserObj);
+                //gọi hàm hiển thị thông tin user lên form
+                showDataUserToForm(DataUserObj);
+
+            },
+            error: function(ajaxContext){
+                alert(ajaxContext.responseText);
+            },
+        });
+
+     }
+     //hàm xử lí load dữ liệu lên form
+     function showDataUserToForm(param){
+        "use strict";
+        $("#input-firstname").val(param.name);
+        $("#input-lastname").val(param.username);
+        $("#input-subject").val(param.subject);
+        $("#select-country").val(param.country);
+        $("#select-customertype").val(param.customerType);
+        $("#select-registerstatus").val(param.registerStatus);
+
+     }
+     //hàm thu thâp dữ liệu
+     function getFormData(){
+        var vUpdateInfoObj = new Object();
+        vUpdateInfoObj.name =  $("#input-firstname").val().trim();
+        vUpdateInfoObj.username =  $("#input-lastname").val().trim();
+       
+        return vUpdateInfoObj;
+    
+     }
+     //hàm kiểm tra dữ liệu
+     function validateFormData(paramOjectUser){
+        if(paramOjectUser.firstname==""){
+            alert("Firstname không được để trống");
+            return false;
+        }
+        if(paramOjectUser.lastname==""){
+            alert("Lastname không được để trống");
+            return false;
+        }
+        if(paramOjectUser.country==""){
+            alert("Country không được để trống");
+            return false;
+        }
+        if(paramOjectUser.subject==""){
+            alert("Subject không được để trống");
+            return false;
+        }
+        if(paramOjectUser.customerType==""){
+            alert("Customer Type không được để trống");
+            return false;
+        }
+        if(paramOjectUser.registerStatus==""){
+            alert("Register Status không được để trống");
+            return false;
+        }
+        return true;
+     }
+     //hàm cọi api để update user
+     function callAjaxAPIUpdateUser(paramOjectUser){
+        "use strict";
+        //Get data user id
+        var vUserId = getCurrentUserId();
+        //B2 Validate dữ liệu
+        //B3 process get user id
+        var vJsonString = JSON.stringify(paramOjectUser);
+        $.ajax({
+            url: "https://jsonplaceholder.typicode.com/users/" + vUserId,
+            
+            type: "PUT",
+            contentType: "application/json; charser-utf-8",
+            data: vJsonString,
+            success: function(res){
+                //Thông báo cập nhật thành công
+                alert("User ID" + res.id + "\nCập nhật thông tin thành công ");
+                //Ghi cập nhật thành công quay trở lại trang danh sách người dùng
+               // window.location.href = "listUser.html";
+                console.log(JSON.stringify(res,true,2));
+
+            },
+            error: function(ajaxContext){
+                console.log(ajaxContext);
+            }
+        })
+     }
+</script>
+</html>

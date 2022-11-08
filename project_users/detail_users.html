@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Task bs150 detail of posts</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="row d-flex align-items-center min-vh-100">
+    <div class="col-sm-6 text-center mx-auto my-0 jumbotron">
+      <div class="row">
+        <div class="col-sm-2 ">
+        </div>
+        <div class="col-sm-10 text-left ">
+          <h3 class="text-info">CHI TIẾT USER</h3>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+          <label>Name :</label>
+        </div>
+        <div class="col-sm-10 ">
+          <input type="text" class="form-control" id="input-name" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left">
+          <label>Username :</label>
+        </div>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="input-username" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left">
+          <label>Email :</label>
+        </div>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="input-email" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+          <label>Adress :</label>
+        </div>
+        <div class="col-sm-2 text-left">
+          <label>Suite :</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="input-address-suite" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+        </div>
+        <div class="col-sm-2 text-left">
+          <label>Street :</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="input-address-street" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+        </div>
+        <div class="col-sm-2 text-left">
+          <label>City :</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="input-address-city" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+        </div>
+        <div class="col-sm-2 text-left">
+          <label>Zipcode :</label>
+        </div>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" id="input-address-zipcode" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+        </div>
+        <div class="col-sm-2 text-left">
+          <label>Geo :</label>
+        </div>
+        <div class="col-sm-2 text-left">
+          <label>lat :</label>
+        </div>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="input-address-geo-lat" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+        </div>
+        <div class="col-sm-2 text-left">
+        </div>
+        <div class="col-sm-2 text-left">
+          <label>lng :</label>
+        </div>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="input-address-geo-lng" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left">
+          <label>Phone :</label>
+        </div>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="input-phone" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left">
+          <label>Website :</label>
+        </div>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="input-website" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+          <label>Company :</label>
+        </div>
+        <div class="col-sm-3 text-left">
+          <label>Name :</label>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="input-company-name" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+        </div>
+        <div class="col-sm-3 text-left">
+          <label>Catch Phrase:</label>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="input-company-catchphrase" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-2 text-left ">
+        </div>
+        <div class="col-sm-3 text-left">
+          <label>bs :</label>
+        </div>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="input-company-bs" placeholder="...">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-8 text-left ">
+        </div>
+        <div class="col-sm-2 text-right">
+          <button class="btn btn-success" id="btn-update">Cập nhật</button>
+        </div>
+        <div class="col-sm-2 text-right">
+          <button class="btn btn-success" id="btn-back">Quay lại</button>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</body>
+<script>
+  "use strcit";
+  /*** REGION 1 - Global variables - Vùng khai báo biến, hằng số, tham số TOÀN CỤC */
+  //khai báo biến toàn cục chứa user id
+  var gUserId = "";
+  /*** REGION 2 - Vùng gán / thực thi sự kiện cho các elements */
+  $(document).ready(function () {
+    onPageLoading();
+  })
+  //gán sự kiện cho nút cập nhật
+  $("#btn-update").on("click", function () {
+    console.log("Nút cập nhật được bấm");
+    onBtnUpdateClick();
+  })
+  //gán sự kiện cho nút quay lại
+  $("#btn-back").on("click", function () {
+    window.location.href = "list_users.html"
+  })
+
+  /*** REGION 3 - Event handlers - Vùng khai báo các hàm xử lý sự kiện */
+  // hàm thực thi khi tải trang
+  function onPageLoading() {
+    "use strict";
+    //B1 thu thập dữ liệu
+    var vId = getDataCommentId(vId);
+    //B2 kiểm tra dữ liệu
+    var vCheck = validateCommentID(vId);
+    if (!vCheck) {
+      console.assert("Chưa có dữ liệu ID");
+      return;
+    }
+    else {
+      gUserId = vId;
+      //B3. call api để lấy dữ liệu thông qua comment id
+      $.ajax({
+        url: "https://jsonplaceholder.typicode.com/users/" + vId,
+        type: 'GET',
+        dataType: 'json',
+        success: function (responseObject) {
+          console.log(responseObject);
+          //bước 4. xử lý hiện thị thông tin lên form
+          displayData(responseObject);
+        },
+        error: function (ajaxContext) {
+          alert(ajaxContext.responseText);
+        }
+      });
+    }
+  }
+  //Hàm được thực thi khi ấn nút cập nhật
+  function onBtnUpdateClick() {
+    "use strict";
+    //khai báo object chứa thông tin user
+    var vUserObject = {
+      name: "",
+      username: "",
+      email: "",
+      address: {
+        suite: "",
+        street: "",
+        city: "",
+        zipcode: "",
+        geo: {
+          lat: "",
+          lng: "",
+        }
+      },
+      phone: "",
+      website: "",
+      company: {
+        name: "",
+        catchPhrase: "",
+        bs: ""
+      }
+    }
+    //Bước 1 thu thập dữ liệu từ form
+    vUserObject = getDataFromForm(vUserObject);
+    //Bước 2 validate dữ liệu
+    var vCheck = validateObjecUserData(vUserObject);
+    if (vCheck) {
+      //Bước gọi api để update user
+      console.log(vUserObject);
+      callApiToUpdateUser(vUserObject);
+    }
+  }
+  /*** REGION 4 - Common funtions - Vùng khai báo hàm dùng chung trong toàn bộ chương trình*/
+
+  //hiện thị dữ liệu lên form
+  function displayData(paramUserObject) {
+    "use strict";
+    $("#input-name").val(paramUserObject.name);
+    $("#input-username").val(paramUserObject.username);
+    $("#input-email").val(paramUserObject.email);
+    $("#input-address-suite").val(paramUserObject.address.suite);
+    $("#input-address-street").val(paramUserObject.address.street);
+    $("#input-address-city").val(paramUserObject.address.city);
+    $("#input-address-zipcode").val(paramUserObject.address.zipcode);
+    $("#input-address-geo-lat").val(paramUserObject.address.geo.lat);
+    $("#input-address-geo-lng").val(paramUserObject.address.geo.lng);
+    $("#input-phone").val(paramUserObject.phone);
+    $("#input-website").val(paramUserObject.website);
+    $("#input-company-name").val(paramUserObject.company.name);
+    $("#input-company-catchphrase").val(paramUserObject.company.catchPhrase);
+    $("#input-company-bs").val(paramUserObject.company.bs);
+
+  }
+  // read data
+  function getDataCommentId() {
+    "use strict";
+    var vUrlString = window.location.href;
+    var vURL = new URL(vUrlString);
+    var vId = vURL.searchParams.get("id");
+
+    return vId;
+
+  }
+  // validate comment id
+  function validateCommentID(paramCommentID) {
+    "use strict";
+    if (paramCommentID === "") {
+      alert("Chưa có ID !");
+      return false;
+    }
+    if (isNaN(paramCommentID)) {
+      alert("ID phải là số nguyên !");
+      return false;
+    }
+    return true;
+  }
+  //hàm thu thập dữ liệu user trên form
+  function getDataFromForm(paramUserObject) {
+    "use strict";
+    paramUserObject.name = $("#input-name").val().trim();
+    paramUserObject.username = $("#input-username").val().trim();
+    paramUserObject.email = $("#input-email").val().trim();
+    paramUserObject.address.suite = $("#input-address-suite").val().trim();
+    paramUserObject.address.street = $("#input-address-street").val().trim();
+    paramUserObject.address.city = $("#input-address-city").val().trim();
+    paramUserObject.address.zipcode = $("#input-address-zipcode").val().trim();
+    paramUserObject.address.geo.lat = $("#input-address-geo-lat").val().trim();
+    paramUserObject.address.geo.lng = $("#input-address-geo-lng").val().trim();
+    paramUserObject.phone = $("#input-phone").val().trim();
+    paramUserObject.website = $("#input-website").val().trim();
+    paramUserObject.company.name = $("#input-company-name").val().trim();
+    paramUserObject.company.catchPhrase = $("#input-company-catchphrase").val().trim();
+    paramUserObject.company.bs = $("#input-company-bs").val().trim();
+    return paramUserObject;
+  }
+  //hàm kiểm tra dữ liệu user thu thập trên form
+  function validateObjecUserData(paramUserObject) {
+    "use strict";
+    if (paramUserObject.name == "") {
+      alert("Vui lòng nhập Name !");
+      return false;
+    }
+    if (paramUserObject.username == "") {
+      alert("Vui lòng nhập Username !");
+      return false;
+    }
+    if (paramUserObject.email == "") {
+      alert("Vui lòng nhập Email !");
+      return false;
+    }
+    if (paramUserObject.address.suite == "") {
+      alert("Vui lòng nhập Address suite !");
+      return false;
+    }
+    if (paramUserObject.address.city == "") {
+      alert("Vui lòng nhập Address city !");
+      return false;
+    }
+    if (paramUserObject.address.street == "") {
+      alert("Vui lòng nhập Address street !");
+      return false;
+    }
+    if (paramUserObject.address.zipcode == "") {
+      alert("Vui lòng nhập Address zipcode !");
+      return false;
+    }
+    if (paramUserObject.address.geo.lat == "") {
+      alert("Vui lòng nhập Address geo lat !");
+      return false;
+    }
+    if (paramUserObject.address.geo.lng == "") {
+      alert("Vui lòng nhập Address geo lng !");
+      return false;
+    }
+    if (paramUserObject.phone == "") {
+      alert("Vui lòng nhập Phone !");
+      return false;
+    }
+    if (paramUserObject.website == "") {
+      alert("Vui lòng nhập Website !");
+      return false;
+    }
+    if (paramUserObject.company.name == "") {
+      alert("Vui lòng nhập Company name !");
+      return false;
+    }
+    if (paramUserObject.company.catchPhrase == "") {
+      alert("Vui lòng nhập Company catch phrase !");
+      return false;
+    }
+    if (paramUserObject.company.bs == "") {
+      alert("Vui lòng nhập Company bs !");
+      return false;
+    }
+    return true;
+
+  }
+  // hàm call api để update user
+  /*function callApiToUpdateUser(paramUserObject){
+    var vJsonString = JSON.stringify(paramUserObject);
+    $.ajax({
+      url: "https://jsonplaceholder.typicode.com/users/" + gUserId,
+      type: "PUT",
+      contentType:"application/json; charser-utf-8",
+      data: vJsonString,
+      success: function(userObject){
+        alert("Cập nhật thành công" + "user id" + gUserId );
+        console.log(userObject);
+        //window.location.href = "list_users.html";
+      
+      },
+      error: function(ajaxContext){
+        alert("Cập nhật thất bại");
+        console.log(ajaxContext.responseText);
+
+      }
+    })
+  }*/
+  // hàm call api để update user
+  function callApiToUpdateUser(paramOjectUser) {
+    "use strict";
+    var vJsonString = JSON.stringify(paramOjectUser);
+    console.log(vJsonString);
+    $.ajax({
+      url: "https://jsonplaceholder.typicode.com/users/" + gUserId,
+      type: "PUT",
+      contentType: "application/json; charser-utf-8",
+      data: vJsonString,
+      success: function (res) {
+        //Thông báo cập nhật thành công
+        alert("User ID" + res.id + "\nCập nhật thông tin thành công ");
+        //Ghi cập nhật thành công quay trở lại trang danh sách người dùng
+        window.location.href = "list_users.html";
+        console.log(res);
+
+      },
+      error: function (ajaxContext) {
+        alert("Cập nhật thất bại");
+        console.log(ajaxContext);
+      }
+    })
+  }
+
+
+
+</script>
+
+</html>
