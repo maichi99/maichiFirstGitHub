@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,23 +7,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-  
+
+
     <title>Document</title>
 </head>
+
 <body>
     <div class="container jumbotron">
         <div class="text-center mb-4">
-            <h3>Insert User</h3>
+            <h3>Thêm user</h3>
         </div>
-        
+
         <div class="row form-group">
             <div class="col-sm-4">
                 <label>Firstname</label>
             </div>
             <div class="col-sm-8">
-                <input class="form-control" placeholder="Nhập Firstname" id="input-firstname" type="text"/>
-                
+                <input class="form-control" placeholder="Nhập Firstname" id="input-firstname" type="text" />
+
             </div>
         </div>
         <div class="row form-group">
@@ -30,8 +32,8 @@
                 <label>Lastname</label>
             </div>
             <div class="col-sm-8">
-                <input class="form-control" placeholder="Nhập Lastname" id="input-lastname" type="text"/>
-                
+                <input class="form-control" placeholder="Nhập Lastname" id="input-lastname" type="text" />
+
             </div>
         </div>
         <div class="row form-group">
@@ -39,8 +41,8 @@
                 <label>Subject</label>
             </div>
             <div class="col-sm-8">
-                <input class="form-control" placeholder="Nhập Subject" id="input-subject" type="text"/>
-                
+                <input class="form-control" placeholder="Nhập Subject" id="input-subject" type="text" />
+
             </div>
         </div>
         <div class="row form-group">
@@ -48,13 +50,13 @@
                 <label>Country</label>
             </div>
             <div class="col-sm-8">
-               <select class="form-control" id="select-country" name="Country">
-                  <option value="VN">Việt Nam</option>
-                  <option value="USA">USA</option>
-                  <option value="AUS">Australia</option>
-                  <option value="CANA">Canada</option>
+                <select class="form-control" id="select-country" name="Country">
+                    <option value="VN">Việt Nam</option>
+                    <option value="USA">USA</option>
+                    <option value="AUS">Australia</option>
+                    <option value="CANA">Canada</option>
 
-               </select>
+                </select>
             </div>
         </div>
         <div class="row form-group">
@@ -62,12 +64,12 @@
                 <label>Customer Type</label>
             </div>
             <div class="col-sm-8">
-               <select class="form-control" id="select-customertype" name="Customertype">
-                  <option value="Standard">Standard</option>
-                  <option value="Gold">Gold</option>
-                  <option value="Premium">Premium</option>
-                  
-               </select>
+                <select class="form-control" id="select-customertype" name="Customertype">
+                    <option value="Standard">Standard</option>
+                    <option value="Gold">Gold</option>
+                    <option value="Premium">Premium</option>
+
+                </select>
             </div>
         </div>
         <div class="row form-group">
@@ -75,104 +77,104 @@
                 <label>Register Status</label>
             </div>
             <div class="col-sm-8">
-               <select class="form-control" id="select-registerstatus" name="Registerstatus">
-                  <option value="Accepted">Accepted</option>
-                  <option value="Denied">Denied</option>
-                  <option value="Standard">Standard</option>
-                  
-               </select>
+                <select class="form-control" id="select-registerstatus" name="Registerstatus">
+                    <option value="Accepted">Accepted</option>
+                    <option value="Denied">Denied</option>
+                    <option value="Standard">Standard</option>
+
+                </select>
             </div>
         </div>
         <div class="row form-group">
             <div class="col-sm-4">
             </div>
             <div class="col-sm-8">
-               <button type="button" class="btn btn-success w-25"id="btn-back" >
-                Quay lại
-               </button>
-               <button type="button" class="btn btn-success w-25" id="btn-insert-user">
-                Thêm mới
-               </button>
+                <button type="button" class="btn btn-success w-25" id="btn-back">
+                    Quay lại
+                </button>
+                <button type="button" class="btn btn-success w-25" id="btn-insert-user">
+                    Thêm mới
+                </button>
             </div>
         </div>
     </div>
-    
+
 </body>
 <script>
     "use strict";
     /*** REGION 1 - Global variables - Vùng khai báo biến, hằng số, tham số TOÀN CỤC */
-     /*** REGION 2 - Vùng gán / thực thi sự kiện cho các elements */
-     $(document).ready(function(){
-       
-     })
-     /*** REGION 3 - Event handlers - Vùng khai báo các hàm xử lý sự kiện */
-     //hàm được gọi khi load trang
-     
-     //hàm xử lí click nút thêm mới
-     
-     $("#btn-insert-user").on("click", function(){
+    /*** REGION 2 - Vùng gán / thực thi sự kiện cho các elements */
+    $(document).ready(function () {
+
+    })
+    /*** REGION 3 - Event handlers - Vùng khai báo các hàm xử lý sự kiện */
+    //hàm được gọi khi load trang
+
+    //hàm xử lí click nút thêm mới
+
+    $("#btn-insert-user").on("click", function () {
         console.log("Nút insert được ấn");
         //B1 Get form data
         var vDataObj = getFormData();
-        
+
         //B2 validate dữ liệu
         var vIsDataValid = validateFormData(vDataObj);
-        if(vIsDataValid){
+        if (vIsDataValid) {
             //B3 process update user info
             callAjaxAPICreateUser(vDataObj);
         }
-     })
-     //hàm xử lí click nút hủy bỏ
-     $("#btn-back").on("click", function(){
+    })
+    //hàm xử lí click nút hủy bỏ
+    $("#btn-back").on("click", function () {
         window.location.href = "listUser.html";
-        
-     })
-     /*** REGION 4 - Common funtions - Vùng khai báo hàm dùng chung trong toàn bộ chương trình*/
-    
 
-     //hàm thu thâp dữ liệu
-     function getFormData(){
+    })
+    /*** REGION 4 - Common funtions - Vùng khai báo hàm dùng chung trong toàn bộ chương trình*/
+
+
+    //hàm thu thâp dữ liệu
+    function getFormData() {
         var vUpdateInfoObj = new Object();
-        vUpdateInfoObj.firstname =  $("#input-firstname").val().trim();
+        vUpdateInfoObj.firstname = $("#input-firstname").val().trim();
         console.log(vUpdateInfoObj.firstname);
-        vUpdateInfoObj.lastname =  $("#input-lastname").val().trim();
-        vUpdateInfoObj.subject =  $("#input-subject").val().trim();
-        vUpdateInfoObj.country =  $("#select-country").val().trim();
-        vUpdateInfoObj.customerType =  $("#select-customertype").val().trim();
-        vUpdateInfoObj.registerStatus =  $("#select-registerstatus").val().trim();
+        vUpdateInfoObj.lastname = $("#input-lastname").val().trim();
+        vUpdateInfoObj.subject = $("#input-subject").val().trim();
+        vUpdateInfoObj.country = $("#select-country").val().trim();
+        vUpdateInfoObj.customerType = $("#select-customertype").val().trim();
+        vUpdateInfoObj.registerStatus = $("#select-registerstatus").val().trim();
         return vUpdateInfoObj;
-    
-     }
-     //hàm kiểm tra dữ liệu
-     function validateFormData(paramOjectUser){
-        if(paramOjectUser.firstname==""){
+
+    }
+    //hàm kiểm tra dữ liệu
+    function validateFormData(paramOjectUser) {
+        if (paramOjectUser.firstname == "") {
             alert("Firstname không được để trống");
             return false;
         }
-        if(paramOjectUser.lastname==""){
+        if (paramOjectUser.lastname == "") {
             alert("Lastname không được để trống");
             return false;
         }
-        if(paramOjectUser.country==""){
+        if (paramOjectUser.country == "") {
             alert("Country không được để trống");
             return false;
         }
-        if(paramOjectUser.subject==""){
+        if (paramOjectUser.subject == "") {
             alert("Subject không được để trống");
             return false;
         }
-        if(paramOjectUser.customerType==""){
+        if (paramOjectUser.customerType == "") {
             alert("Customer Type không được để trống");
             return false;
         }
-        if(paramOjectUser.registerStatus==""){
+        if (paramOjectUser.registerStatus == "") {
             alert("Register Status không được để trống");
             return false;
         }
         return true;
-     }
-     //hàm cọi api để update user
-     function callAjaxAPICreateUser(paramOjectUser){
+    }
+    //hàm cọi api để update user
+    function callAjaxAPICreateUser(paramOjectUser) {
         "use strict";
         var vJsonString = JSON.stringify(paramOjectUser);
         $.ajax({
@@ -180,18 +182,19 @@
             type: "POST",
             contentType: "application/json; charser-utf-8",
             data: vJsonString,
-            success: function(res){
+            success: function (res) {
                 //Thông báo cập nhật thành công
-                alert( "Thêm thông tin user thành công ");
+                alert("Thêm thông tin user thành công ");
                 //Ghi cập nhật thành công quay trở lại trang danh sách người dùng
                 window.location.href = "listUser.html";
-                console.log(JSON.stringify(res,true,2));
+                console.log(JSON.stringify(res, true, 2));
 
             },
-            error: function(ajaxContext){
+            error: function (ajaxContext) {
                 console.log(ajaxContext);
             }
         })
-     }
+    }
 </script>
+
 </html>
